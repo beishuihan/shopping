@@ -5,32 +5,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="<c:url value="/resources/jquery/jquery-1.11.3.min.js"/>"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
-<link rel="shortcut icon"
-	href="<c:url value="/resources/img/favicon.ico"/>">
-<body>
-	<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">礼品</a>
-		</div>
+<head>
+<%@ include file="common/head.inc"%>
 
-	</div>
-	<!-- /.container-fluid --> </nav>
+</head>	
+<body>
+	<%@ include file="common/nav.inc"%>
 
 
 	<div class="container">

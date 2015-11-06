@@ -3,6 +3,7 @@ package com.lee.shopping.verify;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,9 +20,22 @@ import com.lee.shopping.model.Voucher;
 public class VoucherService {
 
 	public Map<String, Voucher> voucherMap;
+	
+	
+	public List<Voucher> all(){
+		init();
+		return new ArrayList<Voucher>(voucherMap.values());
+	}
 
 	public Voucher getBySecet(String secret) {
 
+		init();
+
+		return voucherMap.get(secret);
+
+	}
+
+	private void init() {
 		if (voucherMap == null) {
 
 			InputStream is = DistrictController.class
@@ -43,9 +57,6 @@ public class VoucherService {
 			}
 
 		}
-
-		return voucherMap.get(secret);
-
 	}
 
 }

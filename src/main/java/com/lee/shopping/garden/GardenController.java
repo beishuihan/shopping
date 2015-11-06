@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lee.shopping.model.Voucher;
@@ -17,9 +18,9 @@ public class GardenController {
 	private VoucherService voucherService;
 	
 	@RequestMapping("/vouchers")
-	public List<Voucher> list(){
-		Voucher sec = voucherService.getBySecet("7XZT-TV15-IUL7-W4F0");
-		System.out.println(sec);
-		return null;
+	public String list(Model model){
+		List<Voucher> vouchers = voucherService.all();
+		model.addAttribute("vouchers", vouchers);
+		return "voucher";
 	}
 }

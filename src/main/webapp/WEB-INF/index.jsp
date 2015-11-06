@@ -5,15 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="<c:url value="/resources/jquery/jquery-1.11.3.min.js"/>"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
-<link rel="shortcut icon"
-	href="<c:url value="/resources/img/favicon.ico"/>">
+<head>
+</head>
 <body>
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -32,8 +25,7 @@
 	</div>
 	<!-- /.container-fluid --> </nav>
 
-
-	<main class="container">
+	<div class="container-fluid">
 	<div class="jumbotron">
 		<h1>Hello, goldfish!</h1>
 		<p>...</p>
@@ -53,14 +45,6 @@
 		</form>
 		</p>
 	</div>
-	</main>
-
-	<!-- Site footer -->
-	<footer class="footer">
-	<div class="container"></div>
-	</footer>
-	<script type="text/javascript">
-	
-	</script>
+	</div>
 </body>
 </html>

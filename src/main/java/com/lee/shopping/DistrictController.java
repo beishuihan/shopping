@@ -1,10 +1,13 @@
 package com.lee.shopping;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.lee.shopping.model.District;
+import com.lee.shopping.util.VerifyCodeUtils;
 
 @Controller
 @RequestMapping("/district")
@@ -77,4 +81,26 @@ public class DistrictController {
 		}
 		return countries.get(cityId);
 	}
+	
+	@RequestMapping("/image")
+	public void getProvince(HttpServletResponse response){
+		
+		 response.addHeader("Pragma", "No-cache");  
+		 response.addHeader("Cache-Control", "no-cache");  
+		 response.addIntHeader("Expires", 0);  
+	    response.setContentType("image/jpeg");  
+	          
+	        //生成随机字串  
+	        String verifyCode = VerifyCodeUtils.generateVerifyCode(4);  
+	       
+	        //生成图片  
+	        int w = 100, h = 40;  
+	        try {
+				VerifyCodeUtils.outputImage(w, h, response.getOutputStream(), verifyCode);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
+	}
+	
+	
 }
